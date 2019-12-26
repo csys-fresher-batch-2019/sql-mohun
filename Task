@@ -1,0 +1,72 @@
+create table task(
+software varchar2 (20),
+installed_by varchar2 (20),
+deadline date,
+completed_on date,
+emp_id number,
+constrain emp_id_uq unique(emp_id),
+constrain completed_chk check (completed_on < deadline));
+
+ 
+insert into task (software,installed_by,deadline,completed_on) values ('oracle','naresh','26-12-2019','25-12-2019');
+insert into task (software,installed_by,deadline,completed_on) values ('oracle','naresh','26-12-2019','25-12-2019');
+
+
+select * from task
+
+alter table task add (pri)
+
+create table task(
+software varchar2 (20),
+installed_by varchar2 (20),
+deadline date,
+completed_on date,
+emp_id number,
+constraint emp_id_uq unique(emp_id),
+constraint completed_chk check (completed_on < deadline));
+
+ALTER TABLE task
+DISABLE CONSTRAINT emp_id_uq;
+
+
+insert into task (software,installed_by,deadline,completed_on) values ('oracle','naresh',to_date ('26-12-2019' ,'dd-MM-yyyy'),to_date('25-12-2019','dd-MM-yyyy'));
+insert into task (software,installed_by,deadline,completed_on,emp_id) values ('jdk','suresh',to_date ('27-12-2019' ,'dd-MM-yyyy'),to_date('24-12-2019','dd-MM-yyyy'),2);
+insert into task (software,installed_by,deadline,completed_on,emp_id) values ('oracle','naresh',to_date ('23-12-2019' ,'dd-MM-yyyy'),to_date('21-12-2019','dd-MM-yyyy'),3);
+insert into task (software,installed_by,deadline,completed_on,emp_id) values ('oracle','naresh',to_date ('23-12-2019' ,'dd-MM-yyyy'),to_date('21-12-2019','dd-MM-yyyy'),2);
+
+select * from task
+
+
+DESC USER_CONSTRAINT
+
+
+
+
+
+
+
+alter table task add prioritys number; 
+
+create table employee (emp_id number,emp_name varchar(10));
+create table  priortee (software varchar(15),pri_id number);
+ insert into employee (emp_id,emp_name) values (1,'momo');
+ insert into employee (emp_id,emp_name) values (2,'zuzu');
+ 
+ insert into priortee (software,pri_id) values ('oracle',1)
+ insert into priortee (software,pri_id) values ('jdk',2)
+
+update task set emp_id = 1 
+
+update task set PRIORITYS =2 where emp_id=2 and completed_on ='21-DEC-19'
+
+update task set staus ='pending' where emp_id =2 and completed_on ='21-DEC-19'
+
+select * from task
+
+alter table task add staus varchar(10)
+
+
+
+
+
+
