@@ -1,0 +1,13 @@
+ --select * from customer
+ 
+create table Sample_Qus(Qus_id number ,Question varchar2(100) unique not null,Cat_id number,constraint Qus_id_pk primary key (Qus_id));
+create table Choice(Choice varchar2(100)  not null,Qus_id number,constraint Qus_id_fk Foreign Key (Qus_id) References Sample_Qus(Qus_id),constraint Che unique (Choice));
+create table catogary(Cat_id number,Catogary_name varchar2(25), constraint cat_pk primary key(Cat_id));
+create table age_limte (Age_id number, )
+
+ create sequence seq1 start with 101 increment by 1;
+ insert into Sample_Qus values(seq1.nextval,'How many years are there in a decade?','10','15');
+ insert into Sample_Qus values (seq1.nextval,'The highest mountain on earth is?','Everest','Fuji');
+
+select * from Sample_Qus;
+ constraint check pin()
