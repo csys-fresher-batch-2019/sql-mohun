@@ -18,11 +18,11 @@ create table Sample_Qus(Qus_id number ,Question varchar2(100) not null,
 Choice_1 varchar2(100) unique not null, Choice_2 varchar2(100) unique not null
 ,constraint qes_id_pk primary key (Qes_id)
 );
-create sequence seq1 start with 1 increment by 1
+
 ```
 
 ```sql
- insert into Sample_Qus(seq1.nextval,'How many years are there in a decade?','10','15')
+ insert into Sample_Qus(101,'How many years are there in a decade?','10','15')
 
 select * from Sample_Qus;
 ```
