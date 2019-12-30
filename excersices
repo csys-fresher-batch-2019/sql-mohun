@@ -1,0 +1,49 @@
+--create table orders (order_id number,product_id number,staus varchar2(6),customer_id number,constraint order_id_pk primary key(order_id)
+--,constraint product_id_fk FOREIGN KEY (product_id) REFERENCES product(product_id),constraint customer_id_fk FOREIGN KEY (customer_id) REFERENCES customer(customer_id));
+--create table customer (customer_id number,city varchar2(10),cusromer_name varchar2(15),constraint customer_id_pk primary key(customer_id));
+--create table product (product_id number,product_name varchar2(15),amount number,constraint product_id_pk primary key(product_id));
+--create sequence seq1 start with 1 increment by 1;
+--create sequence seq2 start with 101 increment by 1;
+--create sequence seq3 start with 200 increment by 1;
+ --insert into customer values (seq1.nextval,'mumbai','bob');
+ --insert into customer values (seq1.nextval,'chennai','leo');
+ --insert into customer values (seq1.nextval,'london','max');
+ --insert into customer values (seq1.nextval,'liverpool','joy');
+ --insert into customer values (seq1.nextval,'moraco','liwes');
+ --select * from customer;
+ --insert into product values (SEQ2.nextval,'book',100);
+ --insert into product values (SEQ2.nextval,'bat',800);
+ --insert into product values (SEQ2.nextval,'belt',500);
+ --insert into product values (SEQ2.nextval,'chocolate',300);
+ --insert into product values (SEQ2.nextval,'watch',1500);
+ --select * from product;
+ --insert into orders values(SEQ3.nextval,101,'orderd',1);
+ --insert into orders values(SEQ3.nextval,102,'orderd',2);
+ --insert into orders values(SEQ3.nextval,102,'orderd',2);
+ --insert into orders values(SEQ3.nextval,103,'orderd',4);
+ --insert into orders values(SEQ3.nextval,104,'orderd',5);
+
+select * from orders;
+
+drop table orders;
+
+select * from product;
+
+ --delete product
+ 
+ 
+ 
+ 
+ 
+ --drop sequence seq1;
+ 
+ --drop table customer;
+-- drop table orders;
+ --drop table customer;
+
+
+select * from customer
+
+ --delete  customer;
+ --select * from customer
+ 
