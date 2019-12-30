@@ -16,13 +16,13 @@ User can see the sample question.
 
 create table Sample_Qus(Qus_id number ,Question varchar2(100) not null,
 Choice_1 varchar2(100)  not null, Choice_2 varchar2(100)  not null,
-constraint Qus_id_pk primary key (Qus_id),constraint Che unique (Choice_1,Choice_2));
+constraint Qus_id_pk primary key (Qus_id),constraint Che unique (Choice_1,Choice_2,Question));
 create sequence seq1 start with 101 increment by 1
 ```
 
 ```sql
  insert into Sample_Qus(seq1.nextval,'How many years are there in a decade?','10','15')
- insert into Sample_Qus(seq1.nextval,'The highest mountain on earth is?','Everest ','Fuji')
+ insert into Sample_Qus(seq1.nextval,'The highest mountain on earth is?','Everest','Fuji')
 
 select * from Sample_Qus;
 ```
