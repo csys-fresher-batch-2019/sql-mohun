@@ -21,8 +21,8 @@ create sequence seq1 start with 101 increment by 1
 ```
 
 ```sql
- insert into Sample_Qus(seq1.nextval,'How many years are there in a decade?','10','15')
- insert into Sample_Qus(seq1.nextval,'The highest mountain on earth is?','Everest','Fuji')
+ insert into Sample_Qus values(seq1.nextval,'How many years are there in a decade?','10','15')
+ insert into Sample_Qus values (seq1.nextval,'The highest mountain on earth is?','Everest','Fuji')
 
 select * from Sample_Qus;
 ```
