@@ -88,3 +88,54 @@ insert into Test_Attempt values (501,701,1,1,1) ;
 select * from Choice
 
 ```
+| User_id | User_name | 
+|---------|-----------|
+| 1       | bob       |
+| 2       | max       |
+| 3       | joy       |
+
+
+| Cat_id | Catogary_name |   
+|--------|---------------|
+| 301    | Science       |
+| 401    | Maths         |
+|        |               |
+
+   
+| Diff_id | Diff_level |
+|---------|------------|
+| 501     | Easy       |
+| 601     | Medium     |
+|         |            |
+
+
+
+| Qus_id | Question                              | Cat_id | Diff_id |
+|--------|---------------------------------------|--------|---------|
+| 101    | How many years are there in a decade? | 301    | 501     |
+| 201    | The highest mountain on earth is?     | 301    | 501     |
+|        |                                       |        |         |        
+
+
+| Qus_id | Question                              |
+|--------|---------------------------------------|
+| 101    | How many years are there in a decade? |
+| 201    | The highest mountain on earth is?     |
+|        |                                       |
+
+
+| Choice_id | Choice | Qus_id | Answer |
+|-----------|--------|--------|--------|
+|    101    |   10   |   101  |    1   |
+|    101    |   15   |   101  |    0   |
+
+
+| user_id | Marks_Scored | Ranks |
+|---------|------------|---------|
+|   101   |      10      | 2     |
+|   101   |      15      | 1     |
+
+
+
+
+
