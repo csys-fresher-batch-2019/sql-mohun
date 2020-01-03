@@ -91,7 +91,8 @@ select * from Diff;
 create table Question (
 Qus_id number,
 Question varchar2(100) unique not null,
-Cat_id number,Diff_id number,
+Cat_id number,
+Diff_id number,
 constraint Cat_id_fk Foreign Key (Cat_id) References catogary(Cat_id),
 constraint Qus_id_pk primary key (Qus_id),
 constraint Diff_id_fk Foreign Key (Diff_id) References Diff(Diff_id));
@@ -107,11 +108,11 @@ insert into Question values (SEQ3.nextval,'Express the ten thousandths place in 
 
 ```
 
-| Qus_id | Question                              | Cat_id | Diff_id |
+| Qus_id | Question                              | Cat_id | Diff_id | 
 |--------|---------------------------------------|--------|---------|
-| 501    | How many years are there in a decade? | 301    | 501     |
-| 502    | The highest mountain on earth is?     | 301    | 501     |
-|        |                                       |        |         |   
+| 501    | How many years are there in a decade? | 301    | 501     |   
+| 502    | The highest mountain on earth is?     | 301    | 501     |  
+|        |                                       |        |         |          
 
 ### Feature 4: According to user choice the Question will be given .
 
@@ -181,6 +182,17 @@ constraint useerd foreign key (user_id) references user_login(user_id));
 select * from overall_result
 
 ```
+```sql
+create or replace PROCEDURE PROCEDURE1 (i_user_id number ,i_test_id number ) AS 
+v_marks number;
+v_count number;
+BEGIN
+    select count(*) into v_count from test_attempt where user_id =i_user_id  and test_id=i_test_id;
+  select sum(answer_status) into v_marks  from test_attempt where user_id =i_user_id  and test_id=i_test_id;
+  update overall_result set marks = v_marks where user_id =i_user_id  and test_id=i_test_id;
+END PROCEDURE1;
+```
+
 | Test_id | Mark_scored | Test_result           | User_id |
 |---------|-------------|-----------------------|---------|
 | 1001    | 10          | Good                  | 1       |
@@ -206,6 +218,15 @@ insert into Test_Attempt values (501,701,1,1,1) ;
 insert into Test_Attempt values (501,701,1,1,1) ;
 
 select * from Test_Attempt;
+create or replace FUNCTION IS_CORRECT 
+(
+  i_qus_id IN number , i_choice_id IN NUMBER 
+) RETURN number AS 
+v_answer number;
+BEGIN
+select answer into v_answer from choice where qus_id=i_qus_id and choice_id= i_choice_id;
+  return v_answer;
+END IS_CORRECT;
 
 ```
 
