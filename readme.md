@@ -28,14 +28,18 @@ insert into User_login values (seq5.nextval,'Joy');
 
 select * from User_login;
 
+```
+
 | User_id | User_name | 
 |---------|-----------|
 | 1       | bob       |
 | 2       | max       |
 | 3       | joy       |
-```
+
 ### Feature 2: We can choose a particular Catogary .
+
 ```sql
+
 create table Catogary(
 Cat_id number,
 Catogary_name varchar2(25),
@@ -43,21 +47,21 @@ constraint cat_pk primary key(Cat_id));
 
 create sequence seq2 start with 301 increment by 1;
 
-
-
 insert into Catogary  values (seq1.nextval,'Maths');
 insert into Catogary  values (seq1.nextval,'English');
 insert into Catogary  values (seq1.nextval,'Science');
 
 select * from Catogary;
 
+```
 | Cat_id | Catogary_name |   
 |--------|---------------|
 | 301    | Science       |
 | 302    | Maths         |
-|        |               |
-```
+| 303    | English       |
+
 ### Feature 3: We can choose difficulty level.
+
 ```sql
 
 create table Diff(
@@ -74,12 +78,13 @@ insert into Diff values (seq2.nextval,'Hard');
 
 select * from Diff;
 
+```
+
 | Diff_id | Diff_level |
 |---------|------------|
 | 601     | Easy       |
 | 602     | Medium     |
-|         |            |
-```
+| 603     | Hard       |
 
 ```sql
 
@@ -100,12 +105,14 @@ insert into Question values (SEQ3.nextval,'Jack ___________ English, Spanish and
 insert into Question values (SEQ3.nextval,' ___________ to London on the train yesterday?','102','302');
 insert into Question values (SEQ3.nextval,'Express the ten thousandths place in 1.7389','101','303');
 
+```
+
 | Qus_id | Question                              | Cat_id | Diff_id |
 |--------|---------------------------------------|--------|---------|
 | 501    | How many years are there in a decade? | 301    | 501     |
 | 502    | The highest mountain on earth is?     | 301    | 501     |
 |        |                                       |        |         |   
-```
+
 ### Feature 4: According to user choice the Question will be given .
 
  ```sql
@@ -123,14 +130,17 @@ insert into Sample_Qus values ('506',(select Question from Question where qus_id
 
 select * from Sample_Qus;
 
+
+```
+
 | Qus_id | Question                              |
 |--------|---------------------------------------|
 | 501    | How many years are there in a decade? |
 | 502    | The highest mountain on earth is?     |
 |        |                                       |
 
-```
 ### Feature 5: According to the question the choice will be displayed.
+
 ```sql
 
 create table Choice(Choice_id number,
@@ -150,12 +160,15 @@ insert into Choice values (SEQ4.nextval,'Everest','502','1');
 select * from Choice;
 
 
+```
+
 | Choice_id | Choice | Qus_id | Answer |
 |-----------|--------|--------|--------|
 |    101    |   10   |   501  |    1   |
 |    102    |   15   |   502  |    0   |
-```
+
 ### Feature 6: After the test the result will be displayed .
+
 ```sql
 create table overall_result (
 test_id number,
@@ -167,14 +180,15 @@ constraint useerd foreign key (user_id) references user_login(user_id));
 
 select * from overall_result
 
-
+```
 | Test_id | Mark_scored | Test_result           | User_id |
 |---------|-------------|-----------------------|---------|
 | 1001    | 10          | Good                  | 1       |
 |---------|-------------|-----------------------|---------|
 | 1001    | 4           | Better luck next time | 2       |
-```
-### Feature 7: All the test the test result for parcticular user can be viewed.
+
+### Feature 7: You can view which are question you have answered correct and wrong.
+
 ```sql
 
 create table Test_Attempt(
@@ -194,13 +208,10 @@ insert into Test_Attempt values (501,701,1,1,1) ;
 
 select * from Test_Attempt;
 
+```
 
 | Qus_id | Choice_id | Answer_status | Test_id | User_id |
 |--------|-----------|---------------|---------|---------|
 |   501  |    101    | 0             | 1001    | 1       |
 |--------+-----------|---------------|---------|---------|
 |   502  |    102    | 1             | 1001    | 1       |
-
-
-
-```
