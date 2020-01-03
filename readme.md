@@ -184,7 +184,6 @@ select * from overall_result
 | Test_id | Mark_scored | Test_result           | User_id |
 |---------|-------------|-----------------------|---------|
 | 1001    | 10          | Good                  | 1       |
-|---------|-------------|-----------------------|---------|
 | 1001    | 4           | Better luck next time | 2       |
 
 ### Feature 7: You can view which are question you have answered correct and wrong.
@@ -213,5 +212,4 @@ select * from Test_Attempt;
 | Qus_id | Choice_id | Answer_status | Test_id | User_id |
 |--------|-----------|---------------|---------|---------|
 |   501  |    101    | 0             | 1001    | 1       |
-|--------+-----------|---------------|---------|---------|
 |   502  |    102    | 1             | 1001    | 1       |
