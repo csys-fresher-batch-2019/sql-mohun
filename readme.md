@@ -22,6 +22,7 @@ create table User_login (User_id number,User_name varchar2(20),constraint user_i
 create table Diff(Diff_id number,Diff_level varchar2(10),constraint Diff_id_pk primary key (Diff_id));
 create table Ranks(Rank_id number,Rank_level varchar2(20),constraint Rank_id_pk primary key (Rank_id));
 Create table Results(user_id number, Ranks number,Mark_Scored number);
+create table Test_Attempt (Qus_id number,CHOICE_ID NUMBER,Answer_status varchar2(10) not null,Test_id number,user_id number,constraint qus_tst_id foreign key (qus_id) references Question(qus_id),constraint che_tst_id foreign key (CHOICE_ID) references CHOICE(CHOICE_ID),constraint tezst primary key (test_id),constraint usezr  foreign key (user_id) references user_login(user_id) );
 
 create sequence seq5 start with 1 increment by 1;
 
@@ -80,6 +81,9 @@ insert into Choice values (SEQ4.nextval,'15','501','0');
 insert into Choice values (SEQ4.nextval,'Fuji','502','0');
 insert into Choice values (SEQ4.nextval,'Everest','502','1');
 
+insert into Test_Attempt values (502,703,0,1,1) ; 
+insert into Test_Attempt values (501,701,1,1,1) ;
+insert into Test_Attempt values (501,701,1,1,1) ;
 
 select * from Choice
 
