@@ -218,6 +218,8 @@ insert into Test_Attempt values (501,701,1,1,1) ;
 insert into Test_Attempt values (501,701,1,1,1) ;
 
 select * from Test_Attempt;
+```
+```sql
 create or replace FUNCTION IS_CORRECT 
 (
   i_qus_id IN number , i_choice_id IN NUMBER 
@@ -228,6 +230,7 @@ select answer into v_answer from choice where qus_id=i_qus_id and choice_id= i_c
   return v_answer;
 END IS_CORRECT;
 
+update Test_Attempt set ANSWER_STATUS = IS_CORRECT( QUS_ID,CHOICE_ID) where user_id = 1;
 ```
 
 | Qus_id | Choice_id | Answer_status | Test_id | User_id |
